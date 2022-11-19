@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploratory Analysis Of RainFall</title>
+    <link rel="stylesheet" href={{url_for('static',filename='style1.css')}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <section>
+      <input type="checkbox" id="check">
+      <header>
+        </div>
+        <h2><a href="#" class="logo">Exploratory Analysis Of RainFall Data In India For Agriculture</a></h2>
+        <div class="navigation">
+          <a href="#">Home</a>
+          <a href="#about">EDA of RainFall</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="/predict">Predictor</a>
+          <a href="/Login">Login</a>
+          <a href="/Registration">Registration</a>
+          <a href="/Feedback">Feedback</a>
+        </div>
+        <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+        </label>
+      </header>
+      <div class="content" style="margin-top: 8%;">
+        <div class="info">
+          <h2>Plant Trees <br><span>Save Rain Save Agriculture</span></h2>
+          <p> "Plant trees to bring the rains and save the NATURE. ” - Trees help reduce and moderate the temperature and climate, which is why it is so important that we have more of them</p>
+          <a href="#about" class="info-btn">More info</a>
+        </div>
+      </div>
+     
+    </section>
+
+    <section id="about">
+      <h2>Exploratory Analysis Of RainFall</h2>
+      <p class="about" style="text-align: center;"> Exploratory Analysis Of RainFall is a web app Rainfall has been a major concern these days. 
+      Weather conditions have been changing for time being. Rainfall forecasting is important otherwise, it may lead to many disasters.
+      Irregular heavy rainfall may lead to the destruction of crops, heavy floods that can cause harm to human life.
+      It is important to exactly determine the rainfall for effective use of water resources, crop productivity, and pre-planning of water structures.
+      This comparative study is conducted concentrating on the following aspects: modeling inputs, Visualizing the data, modeling methods,
+      and pre-processing techniques. The results provide a comparison of various evaluation metrics of these machine learning techniques 
+      and their reliability to predict rainfall by analyzing the weather data.We will be using classification algorithms such as Decision tree,
+      Random forest, KNN, and xgboost. We will train and test the data with these algorithms. From this best model is selected and saved in pkl format. 
+      Once the model is saved, we integrate it with flask application and also deploy the model in IBM. 
+      </p>
+    </section>
+
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <p class="dashboard" style="text-align: center;">This dashboard is done using a software called PowerBI which is a product of Microsoft.
+        Here I have just attached the images of the dashboard because PowerBI needs oraganizational
+        account. So to see the visualizations interactive I am attaching my <a href="../static/rain.pbix" style="color: black; font-weight: bold;">PowerBI</a>
+        dashboard file. This requires PowerBI software to open the file. The usage of dashboards like
+        these is to bring a better understanding about the dataset and also to bring some beautiful insights</p>
+      <img class="dashboard-image" src="../static/dashboard.png" alt="1">
+      <div>
+        <img src="../static/1.png" alt="1">
+        <img src="../static/3.png" alt="3">
+        <img src="../static/4.png" alt="4">
+        <img src="../static/5.png" alt="5">
+        <img src="../static/6.png" alt="6">
+        <img src="../static/7.png" alt="7">
+        <img src="../static/8.png" alt="8">
+        <img src="../static/9.png" alt="9">
+      </div>
+    </section>
+
+    
+   
+  </body>
+</html>
