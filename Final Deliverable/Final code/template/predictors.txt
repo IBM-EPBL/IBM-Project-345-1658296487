@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for('static',filename='predictor.css')}}>
+    <title>Rain Prediction</title>
+</head>
+<body>
+    <section id="prediction-form">
+        <form class="form" action="/predict", method="POST">
+            <h1 class="my-3 text-center">Predictor</h1>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="date" class="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="mintemp" class="mintemp"> Minimum temprature</label>
+                        <input type="text" class="form-control" id="mintemp" name="mintemp">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="maxtemp" class="maxtemp">Maximum Temperature</label>
+                        <input type="text" class="form-control" id="maxtemp" name="maxtemp">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="rainfall" class="rainfall">Rainfall</label>
+                        <input type="text" class="form-control" id="rainfall" name="rainfall">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="evaporation" class="evaporation">Evaporation</label>
+                        <input type="text" class="form-control" id="evaporation" name="evaporation">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="sunshine" class="sunshine">Sunshine</label>
+                        <input type="text" class="form-control" id="sunshine" name="sunshine">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="windgustspeed" class="windgustspeed">Wind Gust Speed</label>
+                        <input type="text" class="form-control" id="windgustspeed" name="windgustspeed">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="windspeed9am" class="windspeed9am">Wind Speed 9am</label>
+                        <input type="text" class="form-control" id="windspeed9am" name="windspeed9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="windspeed3pm" class="windspeed3pm">Wind Speed 3pm</label>
+                        <input type="text" class="form-control" id="windspeed3pm" name="windspeed3pm">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="humidity9am" class="humidity9am">Humidity 9am</label>
+                        <input type="text" class="form-control" id="humidity9am" name="humidity9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="humidity3pm" class="humidity3pm">Humidity 3pm</label>
+                        <input type="text" class="form-control" id="humidity3pm" name="humidity3pm">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="pressure9am" class="pressure9am">Pressure 9am</label>
+                        <input type="text" class="form-control" id="pressure9am" name="pressure9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="pressure3pm" class="pressure3pm">Pressure 3pm</label>
+                        <input type="text" class="form-control" id="pressure3pm" name="pressure3pm">
+                    </div>
+                </div>
+                
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="temp9am" class="temp9am">Temperature 9am</label>
+                        <input type="text" class="form-control" id="temp9am" name="temp9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="temp3pm" class=temp3pm">Temperature 3pm</label>
+                        <input type="text" class="form-control" id="temp3pm" name="temp3pm">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="cloud9am" class="cloud9am">Cloud 9am</label>
+                        <input type="text" class="form-control" id="cloud9am" name="cloud9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="cloud3pm" class="cloud3pm">Cloud 3pm</label>
+                        <input type="text" class="form-control" id="cloud3pm" name="cloud3pm">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                         <label for="location" class="location" name="location">Location</label>
+                         <select class="location" id="location" name="location" aria-label="Location">
+							   <option selected>Select Location</option>                       
+							   <option value=1>Andhra Pradesh</option>
+								<option value=2>Andaman and Nicobar Islands</option>
+								<option value=3>Arunachal Pradesh</option>
+								<option value=4>Assam</option>
+								<option value=5>Bihar</option>
+								<option value=6>Chandigarh</option>
+								<option value=7>Chhattisgarh</option>
+								<option value=8>Dadar and Nagar Haveli</option>
+								<option value=9>Daman and Diu</option>
+								<option value=12>Delhi</option>
+								<option value=10>Lakshadweep</option>
+								<option value=11>Puducherry</option>
+								<option value=15>Goa</option>
+								<option value=23>Gujarat</option>
+								<option value=33>Haryana</option>
+								<option value=32>Himachal Pradesh</option>
+								<option value=18>Jammu and Kashmir</option>
+								<option value=14>Jharkhand</option>
+								<option value=22>Karnataka</option>
+								<option value=34>Kerala</option>
+								<option value=35>Madhya Pradesh</option>
+								<option value=36>Maharashtra</option>
+								<option value=16>Manipur</option>
+								<option value=26>Meghalaya</option>
+								<option value=24>Mizoram</option>
+								<option value=13>Nagaland</option>
+								<option value=17>Odisha</option>
+								<option value=20>Punjab</option>
+								<option value=31>Rajasthan</option>
+								<option value=27>Sikkim</option>
+								<option value=20>Tamil Nadu</option>
+								<option value=29>Telangana</option>
+								<option value=21>Tripura</option>
+								<option value=28>Uttar Pradesh</option>
+								<option value=25>Uttarakhand</option>
+								<option value=19>West Bengal</option>
+						</select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="winddir9am" class="winddir9am" name = "winddir9am">Wind Direction at 9am</label>
+                        <select class="winddir9am" id="winddir9am" name="winddir9am" aria-label="Wind Direction 9am">
+                            <option selected>Select Wind Direction at 9am</option>
+                            <option value= 1>N</option>
+                            <option value= 5>W</option>
+                            <option value= 10>S</option>
+                            <option value= 15>E</option>
+                            <option value= 2>NW</option>
+                            <option value= 9>NE</option>
+                            <option value= 7>SW</option>
+                            <option value= 13>SE</option>
+                            <option value= 0>NNW</option>
+                            <option value= 3>NNE</option>
+                            <option value= 8>SSW</option>
+                            <option value= 11>SSE</option>
+                            <option value= 4>WNW</option>
+                            <option value= 6>WSW</option>
+                            <option value= 12>ENE</option>
+                            <option value= 14>ESE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="winddir3pm" class="winddir3pm" name = "winddir3pm">Wind Direction at 3pm</label>
+                        <select class="winddir3pm" id="winddir3pm" name = "winddir3pm" aria-label="Wind Direction at 3pm">
+                            <option selected>Select Wind Direction at 3pm</option>
+                            <option value= 2>N</option>
+                            <option value= 4>W</option>
+                            <option value= 8>S</option>
+                            <option value= 14>E</option>
+                            <option value= 0>NW</option>
+                            <option value= 11>NE</option>
+                            <option value= 9>SW</option>
+                            <option value= 10>SE</option>
+                            <option value= 1>NNW</option>
+                            <option value= 5>NNE</option>
+                            <option value= 7>SSW</option>
+                            <option value= 12>SSE</option>
+                            <option value= 3>WNW</option>
+                            <option value= 6>WSW</option>
+                            <option value= 13>ENE</option>
+                            <option value= 15>ESE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="windgustdir" class="windgustdir" name = "windgustdir">Wind Gust Direction</label>
+                        <select class="windgustdir" id="windgustdir" name = "windgustdir" aria-label="Wind Gust Direction">
+                            <option selected>Select Wind Gust Direction</option>
+                            <option value= 3>N</option>
+                            <option value= 4>W</option>
+                            <option value= 7>S</option>
+                            <option value= 15>E</option>
+                            <option value= 1>NW</option>
+                            <option value= 11>NE</option>
+                            <option value= 9>SW</option>
+                            <option value= 12>SE</option>
+                            <option value= 0>NNW</option>
+                            <option value= 6>NNE</option>
+                            <option value= 8>SSW</option>
+                            <option value= 10>SSE</option>
+                            <option value= 2>WNW</option>
+                            <option value= 5>WSW</option>
+                            <option value= 14>ENE</option>
+                            <option value= 13>ESE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="raintoday" class="raintoday" name="raintoday">Rain Today</label>
+                        <select class="raintoday" id="raintoday" name="raintoday" aria-label="Rain Today">
+                            <option selected>Did it Rain Today</option>
+                            <option value= 1>Yes</option>
+                            <option value= 0>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                    <button type="submit" class="btn btn-info button" style="margin-left: 100%;">Predict</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div>
+         <h1><center> {{ prediction }} </center></h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
